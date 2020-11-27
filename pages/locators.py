@@ -12,7 +12,6 @@ class LoginPageLocators():
     REGISTER_PASS_SECOND = (By.CSS_SELECTOR, '.register_form [name="registration-password2"]')
     REGISTER_BUTTON = (By.CSS_SELECTOR, '[name="registration_submit"]')
 
-
 class ProductPageLocators():
     BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
     SUCCESSFUL_MESSAGE = (By.CSS_SELECTOR, ".alert:nth-child(1)")
