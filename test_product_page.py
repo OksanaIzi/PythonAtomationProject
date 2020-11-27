@@ -6,8 +6,9 @@ import time
 import pytest
 
 @pytest.mark.need_review
-def test_guest_can_add_product_to_basket(browser):
-    link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
+@pytest.mark.parametrize('promo', ["0","1", "2", "3", "4", "5", "6", pytest.param("7", marks=pytest.mark.xfail(reason="some bug")), "8", "9"])
+def test_guest_can_add_product_to_basket(browser, promo):
+    link = f"http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{promo}"
     product_page = ProductPage(browser, link)
     product_page.open()
     product_page.should_not_be_success_message()
